@@ -5,7 +5,7 @@ const User = require('../models/users.js')
 
 users.get('/registration', (req,res) => {
     // res.render('users/new.ejs')
-    res.send('I see something')
+    res.render('users/users.ejs')
 })
 
 module.exports = users

@@ -10,6 +10,7 @@ const session = require('express-session')
 const bcrypt = require('bcrypt')
 const userController = require('./controllers/users.js')
 const homepageController = require('./controllers/homepage.js')
+const sessionsController = require('./controllers/sessions_controller.js')
 
 require('dotenv').config()
 //___________________
@@ -56,6 +57,8 @@ app.use(session({
 }))
 
 app.use('/users', userController)
+app.use('/sessions', sessionsController)
+app.use('/homepage', homepageController)
 
 const hashedString = bcrypt.hashSync('yourStringHere', bcrypt.genSaltSync(10))
 console.log(hashedString)
