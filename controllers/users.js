@@ -8,4 +8,15 @@ users.get('/registration', (req,res) => {
     res.render('users/users.ejs')
 })
 
+users.post('/', (req,res) => {
+    req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+    User.create(req.body, (err, createdUser) => {
+        if(err) {
+            console.log(err)
+        } else {
+            console.log(`Congratulations! Your account is created, ${createdUser}`)
+        } 
+    })
+})
+
 module.exports = users
