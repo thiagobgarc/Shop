@@ -11,7 +11,15 @@ const bcrypt = require('bcrypt')
 const userController = require('./controllers/users.js')
 const homepageController = require('./controllers/homepage.js')
 const sessionsController = require('./controllers/sessions_controller.js')
+const storeController = require('./controllers/store.js')
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
+const rooms = require('./models/rooms.js')
+const { Server } = require("socket.io")
 
+
+
+mongoose.set('strictQuery', true)
 require('dotenv').config()
 //___________________
 //Port
@@ -24,12 +32,6 @@ const PORT = process.env.PORT || 3003;
 //___________________
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI;
-
-// Connect to Mongo &
-// Fix Depreciation Warnings from Mongoose
-// May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true }
-);
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -59,6 +61,7 @@ app.use(session({
 app.use('/users', userController)
 app.use('/sessions', sessionsController)
 app.use('/homepage', homepageController)
+app.use('/store', storeController)
 
 const hashedString = bcrypt.hashSync('yourStringHere', bcrypt.genSaltSync(10))
 console.log(hashedString)
@@ -69,11 +72,40 @@ console.log(bcrypt.compareSync('yourStringHere', hashedString))
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('I see something');
+  res.render('index.ejs');
 });
+
+// Connect to Mongo &
+// Fix Depreciation Warnings from Mongoose
+// May or may not need these depending on your Mongoose version
+mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true }
+  );
+  mongoose.connection.once('open', () => {
+    console.log('connected to mongo');
+  })
+
+  //   ___________________
+// SOCKET.IO
+// ___________________
+
+io.on('connection', (socket) => {
+  console.log('a user connected')
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected')
+  })
+
+  socket.on('chat message', (msg) => {
+    console.log('Message: ' + msg)
+    io.emit('Message', msg)
+  })
+  
+})
 
 //___________________
 //Listener
 //___________________
-app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
+http.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
 

@@ -1,0 +1,55 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, white, turquoise);
+  }
+
+  h1 {
+    text-align: center;
+    color: #000000;
+    position: fixed;
+    font-family: cursive;
+  }
+
+ #messages {
+  list-style-type: none;
+  border: solid black ;
+  margin-top: 25%;;
+  padding: 35%;;
+  background: white;
+  width: 20%;
+  border-radius: 10%;
+ }
+
+ #messages > li {
+  padding: 0.5rem 1rem;
+ }
+
+ #messages > li:nth-child(odd) {
+  background: #ffffff;
+ }
+
+
+  #box {
+    position: fixed;
+    padding-bottom: 20px;
+    bottom: 0;
+    background-color: none;
+    max-width: 1200px;
+    width: 80%;
+    display: flex;
+  }
+
+  #form {
+    flex-grow: 1;
+    padding: 1%;
+  } 
+
+  #input {
+    border-radius: 10%;
+    color: black;
+    padding: 10px;
+    
+  }

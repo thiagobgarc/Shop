@@ -1,3 +1,40 @@
 body{
+    font-family:'Times New Roman', Times, serif;
+    margin-top: 20%;
+    background-image: repeating-linear-gradient(to right, white, turquoise);
     text-align: center;
+    animation: gra 20s ease infinite;
+    animation-direction: reverse;
 }
+
+@keyframes gra {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+    }
+
+
+
+img {
+    width: 15%;
+    position: relative;
+    border-radius: 400%;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+
+input {
+    border-radius: 5px;
+    padding: 4px;
+}
+
