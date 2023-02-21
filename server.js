@@ -12,10 +12,10 @@ const userController = require('./controllers/users.js')
 const homepageController = require('./controllers/homepage.js')
 const sessionsController = require('./controllers/sessions_controller.js')
 const storeController = require('./controllers/store.js')
-const http = require('http').Server(app)
-const io = require('socket.io')(http)
-const rooms = require('./models/rooms.js')
-const { Server } = require("socket.io")
+// const http = require('http').Server(app)
+// const io = require('socket.io')(http)
+// const rooms = require('./models/rooms.js')
+
 
 
 
@@ -73,13 +73,12 @@ console.log(bcrypt.compareSync('yourStringHere', hashedString))
 //localhost:3000
 app.get('/' , (req, res) => {
   res.render('index.ejs');
-});
+})
 
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true }
-  );
+mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true })
   mongoose.connection.once('open', () => {
     console.log('connected to mongo');
   })
@@ -88,24 +87,26 @@ mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true
 // SOCKET.IO
 // ___________________
 
-io.on('connection', (socket) => {
-  console.log('a user connected')
+// io.on('connection', (socket) => {
+//   console.log('a user connected')
 
-  socket.on('disconnect', () => {
-    console.log('user disconnected')
-  })
+//   socket.on('disconnect', () => {
+//     console.log('user disconnected')
+//   })
 
-  socket.on('chat message', (msg) => {
-    console.log('Message: ' + msg)
-    io.emit('Message', msg)
-  })
+//   socket.on('chat message', (msg) => {
+//     console.log('Message: ' + msg)
+//     io.emit('Message', msg)
+//   })
   
-})
+// })
+
+
 
 //___________________
 //Listener
 //___________________
 
-http.listen(PORT, () => console.log( 'Listening on port:', PORT));
+app.listen(PORT, () => console.log( 'Listening on port:', PORT));
 
 

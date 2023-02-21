@@ -8,11 +8,20 @@ const storeSchema = Schema({
         required: true
     },
 
-    description: String,
+    description: {
+        type: String, 
+        required: true 
+    },
 
-    img: String,
+    img: {
+        type: String,
+        required: true
+    },
 
-    price: Number,
+    price: {
+        type:Number, 
+        required: true 
+    },
 
     quantity: {
         type: Number

@@ -11,15 +11,16 @@
         Shop
     </h1>
     <nav>
-        <a href="/store/new"><Button>Add a new item</Button></a>
+        <a href="store/new"><Button>Add a new item</Button></a>
     </nav>
     <br/>
     <div>
-        <% for (let i = 0; i < shop.length; i++) { %> 
+        <% for(let i = 0; i < stores.length; i++) { %> 
             <li>
-                <a href="/shop/<%=store[i]._id%>"><img src="<%=store[i].img%>" alt="">
+                <a href="/store/<%=stores[i]._id%>"><img src="<%=stores[i].img%>" alt="">
                 </a>
             </li>
+            <% } %>
     </div>
 </body>
 </html>

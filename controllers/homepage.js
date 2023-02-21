@@ -3,8 +3,8 @@ const express = require('express')
 const homepage = express.Router()
 const isAuthenticated = require('../utils/middleware.js')
 const rooms = require('../models/rooms.js')
-const http = require('http').Server(homepage)
-const io = require('socket.io')(http)
+// const http = require('http').Server(homepage)
+// const io = require('socket.io')(http)
 
 // homepage.use(isAuthenticated)
 
@@ -19,6 +19,7 @@ homepage.get('/chatroom', (req,res) => {
         rooms: rooms
     })
   })
+
 
 
 module.exports = homepage
