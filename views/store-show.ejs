@@ -34,12 +34,13 @@
         </div>
         <br/>
         <div id="buy">
-            <form action="/store/<%=store.id%>/storeBuy/?_method=PUT" method="POST"></form>
+            <form action="/store/<%=store.id%>/buy-button/?_method=PUT" method="POST">
         <% if(store.quantity < 0){ %>
             Sold Out
         <% } else { %>
              <input type="submit" value="BUY">
         <% } %>
+        </form>
         </div>
         <br/>
         <div id="style">
@@ -62,17 +63,21 @@
         <%=store.carrier%>
         </div>
         <div id="like">
-            <form action="/store/<%=store.id%>/storeLike/?_method=PUT" method="POST"></form>
-           <% if(store.like > 0){ %>
+            <form action="/store/<%=store.id%>/like/?_method=PUT" method="POST">
+           <% if(store.like < 0){ %>
                 no likes
            <% } else { %>
-            <input type="submit" value="Like <%=store.like%>">
+            <input type="submit" value=" <%=store.like%> Likes">
            <% } %>
-        </div id='delete'>
-        <form action="/store/<%= store.id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete <%=store.name%>">
         </form>
         </div>
+        <div>
+            <form action="/store/<%= store.id%>?_method=DELETE" method="POST" id="delete">
+                <input type="submit" value="Delete <%=store.name%>">
+            </form>
+            </div>
+        </div>
+        
     
     
 </body>

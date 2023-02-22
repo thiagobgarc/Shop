@@ -118,7 +118,7 @@ store.put('/:id/like', (req,res) => {
 })
 
 store.put('/:id/dislike', (req,res) => {
-    Store.findByIdAndUpdate(req.params.id, { $inc: {like: -1 } }, { new: true }, (err, storeDislike)=> {
+    Store.findByIdAndUpdate(req.params.id, { $inc: { like: -1 } }, { new: true }, (err, storeDislike)=> {
         if(err) {
             console.log(err)
         } else {
