@@ -46,6 +46,9 @@ const storeSchema = Schema({
     },
     used: {
         type: Boolean
+    },
+    like: {
+        type: Number
     }
 })
 

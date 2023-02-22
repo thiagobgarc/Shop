@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/store-show.css">
+    <link rel="stylesheet" href="/other.css">
     <title>Document</title>
 </head>
 <body>
@@ -28,11 +29,16 @@
         FREE Returns
         </div>
         <br/>
+        <div>
+        Quantity: <%=store.quantity%>
+        </div>
+        <br/>
         <div id="buy">
+            <form action="/store/<%=store.id%>/storeBuy/?_method=PUT" method="POST"></form>
         <% if(store.quantity < 0){ %>
             Sold Out
         <% } else { %>
-             <a href="submit" value="BUY"><button>BUY</button></a>
+             <input type="submit" value="BUY">
         <% } %>
         </div>
         <br/>
@@ -55,7 +61,19 @@
         <div id="carrier">
         <%=store.carrier%>
         </div>
-    </div>
+        <div id="like">
+            <form action="/store/<%=store.id%>/storeLike/?_method=PUT" method="POST"></form>
+           <% if(store.like > 0){ %>
+                no likes
+           <% } else { %>
+            <input type="submit" value="Like <%=store.like%>">
+           <% } %>
+        </div id='delete'>
+        <form action="/store/<%= store.id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete <%=store.name%>">
+        </form>
+        </div>
+    
     
 </body>
 </html>

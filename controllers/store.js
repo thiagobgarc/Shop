@@ -41,6 +41,7 @@ store.get('/:id', (req,res) => {
     } else {
         console.log(store)
         res.render('store-show.ejs', {
+            store: store[req.params.id],
             store: store
         })
     } 
@@ -83,6 +84,49 @@ store.put('/:id/edit', (req,res) => {
     })
 })
 
+store.delete('/:id', (req, res) => {
+    Store.findByIdAndDelete(req.params.id, (err, store) => {
+        if(err) {
+            console.log(err)
+        } else {
+            console.log(`Deleted: ${store}`)
+            res.redirect('/store')
+        }
+    })
+})
+
+store.put('/:id/buy-button', (req,res) => {
+    Store.findByIdAndUpdate(req.params.id, { $inc: {quantity: -1} }, { new: true }, (err, storeBuy) => {
+        if(err) {
+            console.log(err)
+        } else {
+            console.log(`User has bought, ${storeBuy}`)
+            res.redirect('/store')
+        }
+    })
+})
+
+store.put('/:id/like', (req,res) => {
+    Store.findByIdAndUpdate(req.params.id, { $inc: {like: +1 } }, { new: true }, (err, storeLike) => {
+        if(err) {
+            console.log(err)
+        } else {
+            console.log(`User has like ${storeLike}`)
+            res.redirect('/store')
+        }
+    })
+})
+
+store.put('/:id/dislike', (req,res) => {
+    Store.findByIdAndUpdate(req.params.id, { $inc: {like: -1 } }, { new: true }, (err, storeDislike)=> {
+        if(err) {
+            console.log(err)
+        } else {
+            console.log(`User has disliked ${storeDislike}`)
+            res.redirect('/store')
+        }
+    })
+})
 
 
 module.exports = store

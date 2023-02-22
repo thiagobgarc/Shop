@@ -8,7 +8,8 @@ const Seed =  [
       Capacity: '520GB',
       color: 'Grey',
       technology: 'BlueTooth',
-      carrier: 'Unlocked for all Carriers'
+      carrier: 'Unlocked for all Carriers',
+      like: 26
     }, {
       name: 'Dr Dre Headphones',
       description: 'High-performance wireless noise cancelling headphones',
@@ -17,7 +18,8 @@ const Seed =  [
       quantity: 25,
       modelNames: 'Beats Studio3',
       technology: 'BlueTooth, Infrared, Wired',
-      color: 'Red'
+      color: 'Red',
+      like: 15
     }, {
       name: 'MacBook Pro',
       description: 'SUPERCHARGED BY M2 — The 13-inch MacBook Pro laptop is a portable powerhouse.',
@@ -26,7 +28,8 @@ const Seed =  [
       quantity: 40,
       style: '8GB RAM', 
       Capacity: '256GB',
-      color: 'Silver'
+      color: 'Silver',
+      like: 24
     }, {
       name: 'Samsung Galaxy S23',
       img: 'https://www.91-cdn.com/hub/wp-content/uploads/2022/10/Samsung-Galaxy-S23-feat.png',
@@ -34,7 +37,8 @@ const Seed =  [
       price: 850,
       quantity: 55,
       Capacity: '256GB',
-      color: 'Cream'
+      color: 'Cream',
+      like: 10
     }, {
       name: 'Samsung Galaxy S22, GREEN',
       description: 'PREMIUM DESIGN & CRAFTMANSHIP: This phone is lightweight and durable to help endure scratches and dings',
@@ -43,7 +47,8 @@ const Seed =  [
       Capacity: '1TB',
       technology: '50MP PHOTO RESOLUTION plus BRIGHT DISPLAY', 
       carrier: 'Unlocked for all Carriers',
-      img: 'https://i5.walmartimages.com/asr/337354de-3820-47c2-857a-31d62eb90c4e.7e558857c494c42a59c2a865a431e2b4.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF'
+      img: 'https://i5.walmartimages.com/asr/337354de-3820-47c2-857a-31d62eb90c4e.7e558857c494c42a59c2a865a431e2b4.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF',
+      like: 5
     }
   ]
 
