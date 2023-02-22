@@ -17,8 +17,6 @@ const storeController = require('./controllers/store.js')
 // const rooms = require('./models/rooms.js')
 
 
-
-
 mongoose.set('strictQuery', true)
 require('dotenv').config()
 //___________________
@@ -79,9 +77,9 @@ app.get('/' , (req, res) => {
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true })
-  mongoose.connection.once('open', () => {
-    console.log('connected to mongo');
-  })
+  // mongoose.connection.once('open', () => {
+  //   console.log('connected to mongo');
+  // })
 
   //   ___________________
 // SOCKET.IO

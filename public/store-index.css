@@ -1,0 +1,22 @@
+body{
+    background-color: whitesmoke;
+    text-align: center;
+    align-items: center;
+}
+
+img {
+    width: 200px;
+    height:220px;
+    border-radius: 30%;
+}
+
+div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    padding-bottom: 5%;
+}
+
+li {
+    list-style-type: none;
+}

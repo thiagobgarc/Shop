@@ -35,30 +35,30 @@ store.get('/seed', (req,res) => {
 })
 
 store.get('/:id', (req,res) => {
-    Store.findById(req.params.id, (err, foundStore) => {
-        if (err){
-            console.log(err)
-        } else {
-            console.log(foundProduct)
-            res.render('store-show.ejs', {
-                stores: foundStore
-            })
-        }
-    }) 
+  Store.findById(req.params.id, (err, store) => {
+    if(err) {
+        console.log(err)
+    } else {
+        console.log(store)
+        res.render('store-show.ejs', {
+            store: store
+        })
+    } 
+  })
+    
 })
 
 store.get('/:id/edit', (req,res) => {
-    // Store.findById(req.params.id, (err, foundStore) => {
-    //     if(err){
-    //         console.log(err)
-    //     } else {
-    //         console.log(foundStore)
-    //         res.render('store/edit.ejs', {
-    //             store: foundStore
-    //         })
-    //     }
-    // })
-    res.render('store-edit.ejs')
+    Store.findById(req.params.id, (err, foundStore) => {
+        if(err){
+            console.log(err)
+        } else {
+            console.log(foundStore)
+            res.render('store/edit.ejs', {
+                store: foundStore
+            })
+        }
+    })
 })
 
 store.put('/', (req,res) => {
@@ -67,6 +67,17 @@ store.put('/', (req,res) => {
             console.log(err)
             res.send(err)
         } else {
+            res.redirect('/store')
+        }
+    })
+})
+
+store.put('/:id/edit', (req,res) => {
+    Store.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedStore) => {
+        if(err) {
+            console.log(err)
+        } else {
+            console.log(`Updated ${updatedStore}`)
             res.redirect('/store')
         }
     })

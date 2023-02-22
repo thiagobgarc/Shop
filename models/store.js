@@ -25,6 +25,27 @@ const storeSchema = Schema({
 
     quantity: {
         type: Number
+    },
+    style: {
+        type: String
+    },
+    Capacity: {
+        type: String
+    },
+    modelNames: {
+        type: String
+    },
+    technology: {
+        type: String
+    },
+    color: {
+        type: String
+    },
+    carrier: {
+        type: String
+    },
+    used: {
+        type: Boolean
     }
 })
 

@@ -4,12 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/store-show.css">
     <title>Document</title>
 </head>
 <body>
-    <h1><%=store.name%></h1>
+    <div id="store-name">
+    <h1>
+        <%=store.name%>
+    </h1>
+    </div>
     <br/>
     <img src="<%=store.img%>" alt="" srcset="">
+    <div id="description">
+        <div>
+        <%=store.description%>
+        </div>
+        <br/>
+        <div id="price">
+        $<%=store.price%>
+        </div>
+        <br/>
+        <div id="text">
+        FREE Returns
+        </div>
+        <br/>
+        <div id="buy">
+        <% if(store.quantity < 0){ %>
+            Sold Out
+        <% } else { %>
+             <a href="submit" value="BUY"><button>BUY</button></a>
+        <% } %>
+        </div>
+        <br/>
+        <div id="style">
+        <%=store.style%>
+        </div>
+        <br/>
+        <div id="capacity">
+        <%=store.capacity%>
+        </div>
+        <br/>
+        <div id="color">
+        Color: <%=store.color%>
+        </div>
+        <br/>
+        <div id="modelName">
+        <%=store.modelName%>
+        </div>
+        <br/>
+        <div id="carrier">
+        <%=store.carrier%>
+        </div>
+    </div>
     
 </body>
 </html>
