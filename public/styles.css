@@ -69,10 +69,16 @@ h5 {
 #register {
     text-align: center;
     color: black;
-    position: relative; right: -515px;
+    /* position: relative; right: -515px; */
+    text-align: center;
+    display: block;
+    justify-content: space-between;
 }
 
 #login {
-    position: relative; right: -543px;
+    /* position: relative; right: -517px; */
     color: black;
+    display:block;
+    justify-content: space-between;
+    text-align: center;
 }
