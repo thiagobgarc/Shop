@@ -5,6 +5,10 @@ body{
     /* text-align: center; */
     animation: gra 20s ease infinite;
     animation-direction: reverse;
+     max-width: auto;
+    min-width: 400px;
+    max-height: auto;
+    min-height: auto;
 }
 
 @keyframes gra {
@@ -62,8 +66,13 @@ h5 {
     position: relative;
 }
 
-#registration {
+#register {
     text-align: center;
     color: black;
-    position: relatives;
+    position: relative; right: -515px;
+}
+
+#login {
+    position: relative; right: -543px;
+    color: black;
 }

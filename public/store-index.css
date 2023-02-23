@@ -2,6 +2,10 @@ body{
     background-color: white;
     text-align: center;
     align-items: center;
+    max-width: auto;
+    min-width: 400px;
+    max-height: auto;
+    min-height: auto;
 }
 
 #store-img {
@@ -39,6 +43,8 @@ h1 {
 nav{
     margin-left: 75%;
     margin-top: 50px;
+    position: relative; top: -191px;
+    text-align: right;
 }
 
 #store-name {
@@ -48,4 +54,13 @@ nav{
 
 #button {
     text-align: left;
+}
+
+ul {
+    /* text-align: right; */
+    position: relative; top: -90px; 
+    position: relative; right: -300px;
+}
+#list {
+    position: relative; top: -200px;
 }

@@ -12,13 +12,24 @@
     <h1>
        <img src="https://cdn.icon-icons.com/icons2/2440/PNG/512/phone_call_icon_148513.png" alt="" id="store-name">
     </h1>
+    <ul id="user">
+        <% if (currentUser) { %> 
+           <li> Hello <%=currentUser.username %></li>
+           <li>
+            <form action="/sessions?_method=DELETE" method="POST">
+                <button type="submit">Log out</button>
+            </form>
+           </li>
+        <% } %>
+            
+    </ul>
     <nav>
         <a href="store/new" id="button"><Button>Add a new item</Button></a>
     </nav>
     <br/>
     <div>
         <% for(let i = 0; i < stores.length; i++) { %> 
-            <li>
+            <li id="list">
                 <a href="/store/<%=stores[i]._id%>"><img src="<%=stores[i].img%>" alt="" id="store-img">
                 </a>
             </li>

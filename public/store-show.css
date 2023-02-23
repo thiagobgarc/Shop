@@ -1,5 +1,9 @@
 body {
     background-color: white;
+    max-width: auto;
+    min-width: 400px;
+    max-height: auto;
+    min-height: auto;
 }
 
 h1 {
@@ -8,6 +12,7 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
 
     padding-right: 100px;
+
 }
 #delete {
     /* padding-left: 100px;

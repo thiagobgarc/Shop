@@ -5,6 +5,7 @@ const isAuthenticated = require('../utils/middleware.js')
 const Store = require('../models/store.js')
 const Seed = require('../seedData/seed.js')
 
+store.use(isAuthenticated)
 
 store.get('/', (req,res) => {
     Store.find((err, store) => {
@@ -13,14 +14,17 @@ store.get('/', (req,res) => {
         } else {
             console.log(store)
             res.render('store-index.ejs', {
-                stores: store
+                stores: store,
+                currentUser: req.session.currentUser
             })
         }
     })  
 })
 
 store.get('/new', (req,res) => {
-    res.render('store-new.ejs')
+    res.render('store-new.ejs', {
+                currentUser: req.session.currentUser
+    })
 })
 
 store.get('/seed', (req,res) => {
@@ -42,7 +46,8 @@ store.get('/:id', (req,res) => {
         console.log(store)
         res.render('store-show.ejs', {
             store: store[req.params.id],
-            store: store
+            store: store,
+            currentUser: req.session.currentUser
         })
     } 
   })
@@ -56,7 +61,8 @@ store.get('/:id/edit', (req,res) => {
         } else {
             console.log(foundStore)
             res.render('store-edit.ejs', {
-                store: foundStore
+                store: foundStore,
+                currentUser: req.session.currentUser
             })
         }
     })
@@ -79,7 +85,9 @@ store.put('/:id/edit', (req,res) => {
             console.log(err)
         } else {
             console.log(`Updated ${updatedStore}`)
-            res.redirect('/store')
+            res.redirect('/store', {
+                currentUser: req.session.currentUser
+            })
         }
     })
 })
@@ -101,7 +109,9 @@ store.put('/:id/buy-button', (req,res) => {
             console.log(err)
         } else {
             console.log(`User has bought, ${storeBuy}`)
-            res.redirect('/store')
+            res.redirect('/store', {
+                currentUser: req.session.currentUser
+            })
         }
     })
 })

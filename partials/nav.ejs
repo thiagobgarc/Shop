@@ -1,0 +1,13 @@
+<ul>
+    <% if (currentUser) { %> 
+       <li> <%=currentUser.username %></li>
+       <li>
+        <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="Log Out">
+        </form>
+       </li>
+    <% }  else { %>
+        <li><a href="/users/registration"><button>Sign up</button></a></li>
+        <li><a href="/sessions/login"><button>login</button></a></li>
+    <% } %>
+</ul>
