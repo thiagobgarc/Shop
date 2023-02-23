@@ -4,23 +4,19 @@ const Schema = mongoose.Schema
 const storeSchema = Schema({
 
     name: {
-        type: String,
-        required: true
+        type: String
     },
 
     description: {
-        type: String, 
-        required: true 
+        type: String
     },
 
     img: {
-        type: String,
-        required: true
+        type: String
     },
 
     price: {
-        type:Number, 
-        required: true 
+        type:Number
     },
 
     quantity: {

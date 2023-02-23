@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/store-edit.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Edit Products Page</h1>
     <form action="/store/<%=store.id%>/edit?_method=PUT" method="POST">
 
-        Name: <input type="text" name="name" value="<%=product.name%>"/> <br/>
-        Description: <input type="text" name="description" value="<%=product.description%>"/><br/>
-        IMG Link: <input type="text" name="img" value="<%=product.img%>"/><br/>
-        Price: <input type="text" name="price" value="<%=product.price%>"/><br/>
-        Quantity: <input type="text" name="Quantity" value="<%=product.qty%>"/>
+        Name: <input type="text" name="name" value="<%=store.name%>"/> <br/>
+        Description: <input type="text" name="description" value="<%=store.description%>"/><br/>
+        IMG Link: <input type="text" name="img" value="<%=store.img%>"/><br/>
+        Price: <input type="text" name="price" value="<%=store.price%>"/><br/>
+        Quantity: <input type="text" name="Quantity" value="<%=store.quantity%>"/>
+        <br/>
+        Style: <input type="text" name="style" value="<%=store.style%>"/>
+        <br/>
+        Capacity: <input type="text" name="capacity" value="<%=store.Capacity%>"/>
+        <br/>
+        Model Name: <input type="text" name="modelName" id="" value="<%=store.modelName%>"/>
+        <br/>
+        Technology: <input type="text" name="technology" value="<%=store.technology%>"/>
+        <br/>
+        Color: <input type="text" name="color" value="<%=store.color%>"/>
+        <br/>
+        Network Carrier: <input type="text" name="carrier" id="" value="<%=store.carrier%>"/>
         <br/>
         <input type="submit" value="Submit Changes"/>
     </form>

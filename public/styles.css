@@ -1,8 +1,8 @@
 body{
     font-family:'Times New Roman', Times, serif;
-    margin-top: 20%;
+    /* margin-top: 20%; */
     background-image: repeating-linear-gradient(to right, white, turquoise);
-    text-align: center;
+    /* text-align: center; */
     animation: gra 20s ease infinite;
     animation-direction: reverse;
 }
@@ -21,15 +21,27 @@ body{
 
 
 
-img {
+img{
     width: 15%;
     position: relative;
     border-radius: 400%;
-    
+    text-align: left;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 50px;
 }
+
+/* #picture2 {
+    /* position: relative; */
+    /* margin-left: 50%;
+    position: relative;bottom:-200px;
+    width: 200px;
+    height: 120px;
+} */ 
 
 a {
     text-decoration: none;
+    color: azure;
 }
 
 
@@ -38,3 +50,20 @@ input {
     padding: 4px;
 }
 
+h1 {
+    text-align: center;
+    color: black;
+    position: relative;
+}
+
+h5 {
+    text-align: center;
+    color: black;
+    position: relative;
+}
+
+#registration {
+    text-align: center;
+    color: black;
+    position: relatives;
+}

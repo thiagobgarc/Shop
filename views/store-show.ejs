@@ -11,12 +11,18 @@
 <body>
     <div id="store-name">
     <h1>
-        <%=store.name%>
+        <img src="https://cdn.icon-icons.com/icons2/2440/PNG/512/phone_call_icon_148513.png" alt="" id="title-name">
+        <a href="/homepage/chatroom"><img src="https://media.istockphoto.com/id/887472070/photo/woman-holding-and-touching-screen-or-display-with-finger-of-a-mobile-phone-cell-phone-or.jpg?s=612x612&w=0&k=20&c=__zLOojl-9KzsDnNAypvnO7qxK_RRpCm7gns1Dkv_VU=" alt="" id="picture2">
+            <a href="/sessions/login" ><img src="https://as1.ftcdn.net/v2/jpg/04/54/09/98/1000_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg" alt="" id="picture3"></a>
+            <a href="/store"><img src="http://clipart-library.com/img/1843287.png" alt="" id="picture4"></a>
     </h1>
     </div>
     <br/>
-    <img src="<%=store.img%>" alt="" srcset="">
+    <img src="<%=store.img%>" alt="" srcset="" id="store-img">
     <div id="description">
+        <div>
+            <form action="/store/<%=store.id%>/edit%>"><button id="edit">EDIT</button></form>
+        </div>
         <div>
         <%=store.description%>
         </div>

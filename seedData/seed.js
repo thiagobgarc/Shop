@@ -1,7 +1,7 @@
 const Seed =  [
     {
       name: 'SamSung Galaxy',
-      description: 'Galaxy S21 lets you capture epic content in any setting with stunning Nightography',
+      description: 'Galaxy S21 lets you capture epic content in any setting',
       img: 'https://purepng.com/public/uploads/large/samsung-galaxy-s10-prism-front-6bx.png',
       price: 350,
       quantity: "50",
@@ -22,7 +22,7 @@ const Seed =  [
       like: "15"
     }, {
       name: 'MacBook Pro',
-      description: 'SUPERCHARGED BY M2 — The 13-inch MacBook Pro laptop is a portable powerhouse.',
+      description: 'SUPERCHARGED BY M2',
       img: 'https://www.cnet.com/a/img/resize/0c94282fb6be6ac18f07074fdbeabc6bf457437f/hub/2021/10/18/85037be0-8780-4f08-b17c-55732ba9414b/screen-shot-2021-10-18-at-1-31-37-pm-2.png?auto=webp&fit=crop&height=675&width=1200',
       price: 750,
       quantity: "40",
@@ -41,7 +41,7 @@ const Seed =  [
       like: "10"
     }, {
       name: 'Samsung Galaxy S22, GREEN',
-      description: 'PREMIUM DESIGN & CRAFTMANSHIP: This phone is lightweight and durable to help endure scratches and dings',
+      description: 'PREMIUM DESIGN & CRAFTMANSHIP',
       price: 699,
       quantity: "34",
       Capacity: '1TB',

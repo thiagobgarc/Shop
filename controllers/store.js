@@ -55,14 +55,14 @@ store.get('/:id/edit', (req,res) => {
             console.log(err)
         } else {
             console.log(foundStore)
-            res.render('store/edit.ejs', {
+            res.render('store-edit.ejs', {
                 store: foundStore
             })
         }
     })
 })
 
-store.put('/', (req,res) => {
+store.post('/', (req,res) => {
     Store.create(req.body, (err, createdStore) => {
         if(err){
             console.log(err)

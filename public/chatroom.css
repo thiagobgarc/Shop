@@ -1,19 +1,9 @@
 body {
     text-align: center;
-    margin-top: 40%;
-    background-color: turquoise;
+    margin-top: 25%;
+    background-color: white;
     font-size: larger;
 }
 
-a {
-    text-decoration: none;
-    grid-row: 1 / 2;
-    font-family: 'Times New Roman', Times, serif;
-    color:black;
-    font-size: larger;
-}
 
-a :hover {
-    color: aqua;
-}
 
