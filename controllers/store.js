@@ -85,9 +85,7 @@ store.put('/:id/edit', (req,res) => {
             console.log(err)
         } else {
             console.log(`Updated ${updatedStore}`)
-            res.redirect('/store', {
-                currentUser: req.session.currentUser
-            })
+            res.redirect('/store')
         }
     })
 })
