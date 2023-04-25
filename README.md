@@ -2,8 +2,6 @@
 
 ### This is my second project with General Assembly 
 
-https://talktwome.herokuapp.com/
-
 ## Experiences
 
 ## BAD
