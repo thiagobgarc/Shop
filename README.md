@@ -34,4 +34,4 @@
 
     The chatroom portion where it will be a place communicate and trouble shoot any bugs the users come accross. 
 
-    The CSS layout will be another one. I am not a fan of using CSS, however, as I advance in the course I will be better equip to give a better design to the Full-Stack application. 
+    The CSS layout will be another one. I am not a fan of using CSS, however, as I advance in the course I will be better equipped to give a better design to the Full-Stack application. 
